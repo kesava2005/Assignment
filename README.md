@@ -202,6 +202,9 @@ For production deployment:
 4. Ensure MongoDB is accessible
 5. Set secure JWT secrets and other environment variables
 
+## API Documentation
+- [Postman Collection](./docs/TaskManagerAPI.postman_collection.json)
+
 ## Troubleshooting
 
 ### Common Issues
