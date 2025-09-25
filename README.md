@@ -203,7 +203,7 @@ For production deployment:
 5. Set secure JWT secrets and other environment variables
 
 ## API Documentation
-- [Postman Collection](../blob/main/TaskManager%20API.postman_collection.json)
+- Check Postman api documentation
 
 ## Troubleshooting
 
