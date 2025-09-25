@@ -1,0 +1,460 @@
+{
+	"info": {
+		"_postman_id": "5d8d1742-51ba-452f-9436-9a26cb81807e",
+		"name": "TaskManager API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40056667",
+		"_collection_link": "https://platform-api-team-4697.postman.co/workspace/Sigma-web-development-express~78f34a75-4b5e-47b6-96cd-7d7d1a9fd2d6/collection/40056667-5d8d1742-51ba-452f-9436-9a26cb81807e?action=share&source=collection_link&creator=40056667"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"varatikesava@gmail.com\",\r\n    \"password\": \"kesava\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/v1/auth/login",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\" :\"T Saketh\",\r\n\"email\" :\"saketh@gmail.com\",\r\n\"password\" : \"saketh\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/v1/auth/register",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTasks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGQzYzIzYmQ3YjcyYzBhNzQ2NzVhOWIiLCJpYXQiOjE3NTg3MTk2NjIsImV4cCI6MTc1OTMyNDQ2Mn0.Jdemj0MHomDYs62zkmJk0OamrJ8wRLQrpkh8H9cLiyU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": \r\n    {        \r\n        \"name\" : \"Varati Chenna Kesava\",\r\n        \"email\" : \"varatikesava@gmail.com\",\r\n        \"password\" : \"$2b$10$N9HIFmSkulcy4yeS.OouF.RMItIq36tpS2lABMhNczi1EUbH4HIb.\",\r\n        \"role\" : \"user\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/v1/tasks",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddTask",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGQzYzIzYmQ3YjcyYzBhNzQ2NzVhOWIiLCJpYXQiOjE3NTg3MTk2NjIsImV4cCI6MTc1OTMyNDQ2Mn0.Jdemj0MHomDYs62zkmJk0OamrJ8wRLQrpkh8H9cLiyU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Project report\",\r\n    \"description\" : \"\",\r\n    \"status\" : \"completed\",\r\n    \"user\":{\r\n       \"_id\" : \"68d3c23bd7b72c0a74675a9b\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/v1/tasks",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateTask",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGQzYzIzYmQ3YjcyYzBhNzQ2NzVhOWIiLCJpYXQiOjE3NTg3MTk2NjIsImV4cCI6MTc1OTMyNDQ2Mn0.Jdemj0MHomDYs62zkmJk0OamrJ8wRLQrpkh8H9cLiyU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\" : \"completed\",\r\n    \"user\": {    \r\n        \"name\": \"Varati Chenna Kesava\",\r\n        \"email\": \"varatikesava@gmail.com\",\r\n        \"password\":  \"$2b$10$N9HIFmSkulcy4yeS.OouF.RMItIq36tpS2lABMhNczi1EUbH4HIb.\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/v1/tasks/68d3d6697d0c9ef556deeb6f",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"68d3d6697d0c9ef556deeb6f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteTask",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGQzYzIzYmQ3YjcyYzBhNzQ2NzVhOWIiLCJpYXQiOjE3NTg3MTk2NjIsImV4cCI6MTc1OTMyNDQ2Mn0.Jdemj0MHomDYs62zkmJk0OamrJ8wRLQrpkh8H9cLiyU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/tasks/68d3f41def4482aff84e4767",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"68d3f41def4482aff84e4767"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdminRegister",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGQzYzIzYmQ3YjcyYzBhNzQ2NzVhOWIiLCJpYXQiOjE3NTg3MTk2NjIsImV4cCI6MTc1OTMyNDQ2Mn0.Jdemj0MHomDYs62zkmJk0OamrJ8wRLQrpkh8H9cLiyU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Paul Blaze\",\r\n    \"email\" : \"BlazePaul@gmail.com\",\r\n    \"password\": \"Blaze123\",\r\n    \"role\" : \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AdminLogin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGQzYzIzYmQ3YjcyYzBhNzQ2NzVhOWIiLCJpYXQiOjE3NTg3MTk2NjIsImV4cCI6MTc1OTMyNDQ2Mn0.Jdemj0MHomDYs62zkmJk0OamrJ8wRLQrpkh8H9cLiyU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Paul Blaze\",\r\n    \"email\" : \"BlazePaul@gmail.com\",\r\n    \"password\": \"Blaze123\",\r\n    \"role\" : \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users And Tasks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGQ0ODQ2YzM2MGY5MGVmMDQxZTllMWQiLCJpYXQiOjE3NTg3NTgxMDIsImV4cCI6MTc1OTM2MjkwMn0.4xPdTXNvP4HLK9wm60GT3AoUsrTLvElC7eHcXyC0LmU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/tasks/admin/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"admin",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGQ0ODQ2YzM2MGY5MGVmMDQxZTllMWQiLCJpYXQiOjE3NTg3NTgxMDIsImV4cCI6MTc1OTM2MjkwMn0.4xPdTXNvP4HLK9wm60GT3AoUsrTLvElC7eHcXyC0LmU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/tasks/admin/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"admin",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Current User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGQ0ODQ2YzM2MGY5MGVmMDQxZTllMWQiLCJpYXQiOjE3NTg3NTgxMDIsImV4cCI6MTc1OTM2MjkwMn0.4xPdTXNvP4HLK9wm60GT3AoUsrTLvElC7eHcXyC0LmU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/auth/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "jwt",
+		"jwt": [
+			{
+				"key": "algorithm",
+				"value": "HS256",
+				"type": "string"
+			},
+			{
+				"key": "isSecretBase64Encoded",
+				"value": false,
+				"type": "boolean"
+			},
+			{
+				"key": "payload",
+				"value": "{}",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "headerPrefix",
+				"value": "Bearer",
+				"type": "string"
+			},
+			{
+				"key": "queryParamKey",
+				"value": "token",
+				"type": "string"
+			},
+			{
+				"key": "header",
+				"value": "{}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
